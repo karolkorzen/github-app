@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		1A51AE07962FE2B2880E34EC /* Pods_github_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DABC8A791F698E906661048 /* Pods_github_app.framework */; };
 		4B4CBE9125841BD900F99591 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CBE9025841BD900F99591 /* Utilities.swift */; };
-		4B4CBE942584333F00F99591 /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CBE932584333F00F99591 /* RepositoryCellViewModel.swift */; };
+		4B4CBE942584333F00F99591 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CBE932584333F00F99591 /* RepositoryViewModel.swift */; };
 		4B5288D325841841008575BE /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5288D225841841008575BE /* RepositoryCell.swift */; };
+		4B7936242584D8490088F53A /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7936232584D8490088F53A /* RepositoryCellViewModel.swift */; };
 		4BD9F37D25839CF500978FDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD9F37C25839CF500978FDD /* AppDelegate.swift */; };
 		4BD9F37F25839CF500978FDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD9F37E25839CF500978FDD /* SceneDelegate.swift */; };
 		4BD9F38125839CF500978FDD /* RepositorySearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD9F38025839CF500978FDD /* RepositorySearchController.swift */; };
@@ -26,8 +27,9 @@
 /* Begin PBXFileReference section */
 		18A52F5930B9FE3F156C4F29 /* Pods-github app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github app.debug.xcconfig"; path = "Target Support Files/Pods-github app/Pods-github app.debug.xcconfig"; sourceTree = "<group>"; };
 		4B4CBE9025841BD900F99591 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		4B4CBE932584333F00F99591 /* RepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewModel.swift; sourceTree = "<group>"; };
+		4B4CBE932584333F00F99591 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		4B5288D225841841008575BE /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		4B7936232584D8490088F53A /* RepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewModel.swift; sourceTree = "<group>"; };
 		4BD9F37925839CF500978FDD /* github app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD9F37C25839CF500978FDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BD9F37E25839CF500978FDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +106,8 @@
 		4BD9F39525839F5F00978FDD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				4B4CBE932584333F00F99591 /* RepositoryCellViewModel.swift */,
+				4B4CBE932584333F00F99591 /* RepositoryViewModel.swift */,
+				4B7936232584D8490088F53A /* RepositoryCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -274,13 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B4CBE942584333F00F99591 /* RepositoryCellViewModel.swift in Sources */,
+				4B4CBE942584333F00F99591 /* RepositoryViewModel.swift in Sources */,
 				4BD9F38125839CF500978FDD /* RepositorySearchController.swift in Sources */,
 				4BD9F3A02583AA7400978FDD /* Repository.swift in Sources */,
 				4BD9F3A32583B0C000978FDD /* Commit.swift in Sources */,
 				4BD9F37D25839CF500978FDD /* AppDelegate.swift in Sources */,
 				4BD9F37F25839CF500978FDD /* SceneDelegate.swift in Sources */,
 				4BD9F39C2583A0B600978FDD /* GithubService.swift in Sources */,
+				4B7936242584D8490088F53A /* RepositoryCellViewModel.swift in Sources */,
 				4B4CBE9125841BD900F99591 /* Utilities.swift in Sources */,
 				4BD9F39225839E6300978FDD /* Extension.swift in Sources */,
 				4B5288D325841841008575BE /* RepositoryCell.swift in Sources */,

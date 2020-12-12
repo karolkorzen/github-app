@@ -14,7 +14,7 @@ class RepositorySearchController: UITableViewController {
     //MARK: - Properties
     
     let searchController = UISearchController(searchResultsController: nil)
-    let viewModel = RepositoryCellViewModel()
+    var viewModel = RepositoryViewModel()
     
     //MARK: - Lifecycle
     
@@ -51,15 +51,12 @@ class RepositorySearchController: UITableViewController {
 extension RepositorySearchController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-//        return inSearchMode ? filteredUsers.count : users.count
+        return viewModel.repositories.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as! RepositoryCell
-        //cell.user = users[indexPath.row]
-//        let user = inSearchMode ? filteredUsers[indexPath.row] : users[indexPath.row]
-//        cell.user = user
+        cell.viewModel = RepositoryCellViewModel(withRepository: viewModel.repositories[indexPath.row])
         return cell
     }
 
@@ -68,8 +65,6 @@ extension RepositorySearchController {
 //        let controller = ProfileController(user: user)
 //        navigationController?.pushViewController(controller, animated: true)
     }
-    
-    
 }
 
 //MARK: - UISearchBarDelegate
@@ -78,6 +73,18 @@ extension RepositorySearchController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchController.searchBar.text else {return}
         print("SEARCHING: \(searchText)")
+        viewModel.reset {
+            self.tableView.reloadData()
+            self.viewModel.search(withPhrase: searchText, completion: {
+                self.tableView.reloadData()
+            })
+        }
         searchController.dismiss(animated: true, completion: nil)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.reset {
+            self.tableView.reloadData()
+        }
     }
 }

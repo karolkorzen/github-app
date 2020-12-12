@@ -38,7 +38,6 @@ class Utilities {
         iv.clipsToBounds = true
         iv.setDimensions(width: width, height: width)
         iv.layer.cornerRadius = 10
-        iv.backgroundColor = .blue
         return iv
     }
 }
