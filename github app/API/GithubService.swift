@@ -7,36 +7,13 @@
 
 import UIKit
 
-//                 https://api.github.com/repos/:user/:repo/branches
-//FIXME: - commits https://api.github.com/repos/chvin/react-tetris/branches
-
-//FIXME - commits corrct GET /repos/:owner/:repo/commits
-//                          https://api.github.com/repos/chvin/react-tetris/commits
-
-//FIXME: - repository https://api.github.com/search/repositories?q=tetris&sort=stars&order=desc
-
-/*
- 
- GithubService.shared.searchRepositories(withPhrase: "Training-App") { (response) in
-     print("response => \(response.items.count)")
-     print("response => \(response.items.first)")
-     print("now tryin to fetch commits")
-     guard let firstResponse = response.items.first else {return}
-     GithubService.shared.fetchCommits(withOwnerName: firstResponse.owner.login, withRepositoryName: firstResponse.name) { (response) in
-         print("response => \(response.count)")
-         print("response => \(response)")
-     }
- }
- 
- */
-
 class GithubService {
     static let shared = GithubService()
     private var dataTask: URLSessionDataTask?
        
     func searchRepositories(withPhrase phrase: String, completion: @escaping ((RawRepositoryResponse) -> Void)) {
         
-        let githubLink = "https://api.github.com/search/repositories?q=\(phrase)&sort=stars&order=desc"
+        let githubLink = "https://api.github.com/search/repositories?q=\(phrase)"
         
         guard let url = URL(string: githubLink) else {return}
         
@@ -74,7 +51,7 @@ class GithubService {
         dataTask?.resume()
     }
     
-    func fetchCommits(withOwnerName owner: String, withRepositoryName name: String, completion: @escaping (([RawCommitsResponse]) -> Void)) {
+    func fetchCommits(withOwnerName owner: String, withRepositoryName name: String, completion: @escaping (([Commit]) -> Void)) {
         
         let githubLink = "https://api.github.com/repos/\(owner)/\(name)/commits"
         
@@ -106,8 +83,9 @@ class GithubService {
                 if jsonData.count > 3 {
                     jsonData = Array(jsonData[0 ..< 3])
                 }
+                let data = jsonData.map{$0.commit}
                 DispatchQueue.main.async {
-                    completion(jsonData)
+                    completion(data)
                 }
             } catch let error {
                 print("ERROR!!!")

@@ -26,6 +26,10 @@ class RepositorySearchController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
+        view.backgroundColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Search"
+        navigationItem.searchController = searchController
     }
     
     //MARK: - Helpers
@@ -37,11 +41,6 @@ class RepositorySearchController: UITableViewController {
         
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Search repository"
-        
-        view.backgroundColor = .white
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Search"
-        navigationItem.searchController = searchController
     }
     
 }
@@ -61,9 +60,12 @@ extension RepositorySearchController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let user = inSearchMode ? filteredUsers[indexPath.row] : users[indexPath.row]
-//        let controller = ProfileController(user: user)
-//        navigationController?.pushViewController(controller, animated: true)
+        let controller = RepositoryDetailsController(withRepository: viewModel.repositories[indexPath.row])
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 92
     }
 }
 

@@ -13,8 +13,8 @@ class RepositoryCell: UITableViewCell {
     //MARK: - Properties
     
     private var profileImageView = Utilities.shared.profileImageView()
-    private var repositoryTitleLabel = Utilities.shared.boldLabel(withSize: 17)
-    private var starsCountLabel = Utilities.shared.standardLabel(withSize: 17, withWeight: .light)
+    private var repositoryTitleLabel = Utilities.shared.standardLabel(withSize: 17, withWeight: .semibold, withColor: .black)
+    private var starsCountLabel = Utilities.shared.standardLabel(withSize: 17, withWeight: .regular)
     private var isBiggerLabel: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage.init(systemName: "chevron.right")

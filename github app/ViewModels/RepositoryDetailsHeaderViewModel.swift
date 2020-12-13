@@ -1,16 +1,16 @@
 //
-//  RepositoryCellViewModel.swift
+//  RepositoryDetailsHeaderViewModel.swift
 //  github app
 //
-//  Created by Karol Korzeń on 12/12/2020.
+//  Created by Karol Korzeń on 13/12/2020.
 //
 
 import Foundation
+import SDWebImage
 
-class RepositoryCellViewModel {
+class RepositoryDetailsHeaderViewModel {
     
     //MARK: - Properties
-    
     let repository: Repository
     
     //MARK: - Lifecycle
@@ -20,17 +20,13 @@ class RepositoryCellViewModel {
     }
     
     //MARK: - Helpers
-
+    
     var profileImageUrl: URL {
         guard let url = URL(string: repository.owner.avatar_url) else {return URL(string: "")!}
         return url
     }
     
-    var titleLabelText: String{
-        return repository.name
-    }
-    
     var startsLabelText: String{
-        return "✩ \(repository.stargazers_count)"
+        return "✩ Number of Stars (\(repository.stargazers_count))"
     }
 }
