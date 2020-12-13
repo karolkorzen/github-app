@@ -7,6 +7,8 @@
 
 import UIKit
 
+//MARK: - FooterDelegate
+
 protocol FooterDelegate: class{
     func shareRepo()
 }

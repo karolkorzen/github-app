@@ -7,6 +7,8 @@
 
 import UIKit
 
+//MARK: - CommitsHeaderViewDelegate
+
 protocol CommitsHeaderViewDelegate: class {
     func popVC()
 }

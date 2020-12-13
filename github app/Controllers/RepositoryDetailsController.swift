@@ -75,11 +75,15 @@ extension RepositoryDetailsController {
     }
 }
 
+//MARK: - CommitsHeaderViewDelegate
+
 extension RepositoryDetailsController: CommitsHeaderViewDelegate {
     func popVC() {
         navigationController?.popViewController(animated: true)
     }
 }
+
+//MARK: - FooterDelegate
 
 extension RepositoryDetailsController: FooterDelegate {
     func shareRepo() {
