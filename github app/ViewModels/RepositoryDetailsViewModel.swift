@@ -29,4 +29,10 @@ class RepositoryDetailsViewModel {
             completion()
         }
     }
+    
+    //MARK: - Helpers
+    
+    var numberOfCommits: Int {
+        return commits.count
+    }
 }

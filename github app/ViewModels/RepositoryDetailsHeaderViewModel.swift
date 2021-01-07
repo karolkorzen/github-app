@@ -11,7 +11,7 @@ import SDWebImage
 class RepositoryDetailsHeaderViewModel {
     
     //MARK: - Properties
-    let repository: Repository
+    private let repository: Repository
     
     //MARK: - Lifecycle
     
@@ -28,5 +28,17 @@ class RepositoryDetailsHeaderViewModel {
     
     var startsLabelText: String{
         return "✩ Number of Stars (\(repository.stargazers_count))"
+    }
+    
+    var repositoryAuthorNameLabelText: String {
+        return repository.owner.login
+    }
+    
+    var repoTitleLabelText: String{
+        return repository.name
+    }
+    
+    var repositoryHTML_URL: String{
+        return repository.html_url
     }
 }

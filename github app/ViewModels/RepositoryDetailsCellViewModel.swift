@@ -20,4 +20,16 @@ class RepositoryDetailsCellViewModel {
     var authorName: String {
         return commit.author.name.uppercased()
     }
+    
+    var numberLabelText: String {
+        return number.description
+    }
+    
+    var authorEmailLabelText: String {
+        return commit.author.email
+    }
+    
+    var commitMessageLabelText: String {
+        return commit.message
+    }
 }

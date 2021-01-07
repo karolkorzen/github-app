@@ -47,10 +47,10 @@ class CommitCell: UITableViewCell {
     
     func putData(){
         guard let viewModel = self.viewModel else {return}
-        numberLabel.text = viewModel.number.description
+        numberLabel.text = viewModel.numberLabelText
         authorNameLabel.text = viewModel.authorName
-        authorEmailLabel.text = viewModel.commit.author.email
-        commitMessageLabel.text = viewModel.commit.message
+        authorEmailLabel.text = viewModel.authorEmailLabelText
+        commitMessageLabel.text = viewModel.commitMessageLabelText
         commitMessageLabel.numberOfLines = 0
     }
     

@@ -62,6 +62,7 @@ extension RepositorySearchController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = RepositoryDetailsController(withRepository: viewModel.repositories[indexPath.row])
         navigationController?.pushViewController(controller, animated: true)
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

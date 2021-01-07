@@ -67,7 +67,7 @@ class CommitsHeaderView: UIView{
     //MARK: - Selectors
     
     @objc func viewOnlineTapped(){
-        if let url = URL(string: viewModel.repository.html_url) {
+        if let url = URL(string: viewModel.repositoryHTML_URL) {
             UIApplication.shared.open(url)
         }
     }
@@ -81,7 +81,7 @@ class CommitsHeaderView: UIView{
     func configureUI(){
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
-        iv.backgroundColor = .red
+        iv.backgroundColor = .white
         iv.clipsToBounds = true
         iv.setDimensions(width: frame.width, height: 263)
         iv.sd_setImage(with: viewModel.profileImageUrl)
@@ -92,9 +92,9 @@ class CommitsHeaderView: UIView{
         numberOfStarsLabel.alpha = 0.5
         
         repoByLabel.text = "REPO BY"
-        repoAuthorNameLabel.text = viewModel.repository.owner.login
+        repoAuthorNameLabel.text = viewModel.repositoryAuthorNameLabelText
         numberOfStarsLabel.text = viewModel.startsLabelText
-        repoTitleLabel.text = viewModel.repository.name
+        repoTitleLabel.text = viewModel.repoTitleLabelText
         commitsHistoryLabel.text = "Commits History"
         
         addSubview(repoByLabel)

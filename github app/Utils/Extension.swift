@@ -119,3 +119,16 @@ extension UIView {
                bottom: view.bottomAnchor, right: view.rightAnchor)
     }
 }
+
+extension UIImage {
+    convenience init(withURL url: URL){
+        let imageData = try! Data(contentsOf: url)
+        self.init(data: imageData)!
+    }
+    
+    convenience init(withStringURL url: String){
+        let imageUrl = URL(string: url)!
+        let imageData = try! Data(contentsOf: imageUrl)
+        self.init(data: imageData)!
+    }
+}
