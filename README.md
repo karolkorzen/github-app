@@ -1,5 +1,5 @@
 # github-app
-Application for saving records from trainings/meals
+Application for searching public repositories on Github with showing some details about them.
 
 ## Table of contents
 * [Technologies](#Technologies)
