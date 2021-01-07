@@ -9,7 +9,7 @@ Application for searching public repositories on Github with showing some detail
 
 * UIKit
 * MVVM
-* CocoaPods
+* SDWebImage (CocoaPods) 
 
 ## Scenes_Preview
 
